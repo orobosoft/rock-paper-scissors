@@ -71,13 +71,13 @@ function game() {
 
     //Report a winner or loser
 	if (playerScore > computerScore) {
-		console.log("Won");
+		console.log("Congratulations You Won The Game!");
 	} else if (playerScore === computerScore) {
-		console.log("Draw");
+		console.log("It Is A Tie. What Tough One!");
 	} else {
-		console.log("Lost");
+		console.log("Duhhh... You Lost. Try Again");
 	}
-	console.log(playerScore, computerScore);
+	console.log(`With a score of ***You:${playerScore}, --- Computer:${computerScore}***`);
 }
 
 // Get input from the user
