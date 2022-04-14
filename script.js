@@ -50,7 +50,32 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Play a 5 round game
+function game() {
+	// Record score
+	let playerScore = 0;
+    let computerScore = 0;
 
-// Keep score
-// Report a winner or loser
-// Get input from the user
+    // Iterate the game
+    for (let i = 0; i < 5; i++) {
+        result = playRound(getInput(), computerPlay());
+		if (result.includes("Won")) {
+			playerScore++;
+		}
+		if (result.includes("Lose")) {
+			computerScore++;
+		}
+
+		console.log(result);
+		console.log(playerScore, computerScore);
+	}
+
+    //Report a winner or loser
+	if (playerScore > computerScore) {
+		console.log("Won");
+	} else if (playerScore === computerScore) {
+		console.log("Draw");
+	} else {
+		console.log("Lost");
+	}
+	console.log(playerScore, computerScore);
+}
