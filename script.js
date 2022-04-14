@@ -79,3 +79,26 @@ function game() {
 	}
 	console.log(playerScore, computerScore);
 }
+
+// Get input from the user
+function getInput() {
+
+    let input = "";
+    cond = true;
+    while (cond) {
+        if (input == "rock" || input == "paper" || input == "scissors") {
+            cond = false;
+        } else if (input === "null"){
+            break;
+        } else {
+            input = prompt(
+                "Please enter only one of the following:\n\nRock, Paper or Scissors?"
+                ).toLowerCase();
+            }
+        }
+        console.log(`You entered ${input}`);
+    return input;
+}
+
+
+game();
