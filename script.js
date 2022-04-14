@@ -7,3 +7,8 @@ function computerPlay() {
             choice = "Scissors";
     return choice;
 }
+
+// Take two option and return a string that declares the winner
+function playRound(playerSelection, computerSelection) {
+    
+}
