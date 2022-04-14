@@ -16,4 +16,34 @@ function playRound(playerSelection, computerSelection) {
 	ps = playerSelection.toLowerCase();
 	cs = computerSelection.toLowerCase();
 
+	// Game logic for single round play
+	if (ps === "rock" && cs === "paper") {
+		result = "Won";
+		(winner = "Rock"), (loser = "Paper");
+	} else if (ps === "paper" && cs === "scissors") {
+		result = "Lose";
+		winner = "Scissors";
+		loser = "Paper";
+	} else if (ps === "scissors" && cs === "rock") {
+		result = "Lose";
+		winner = "Rock";
+		loser = "Scissors";
+	} else if (ps === "scissors" && cs === "paper") {
+		result = "Won";
+		winner = "Scissors";
+		loser = "Paper";
+	} else if (ps === "paper" && cs === "rock") {
+		result = "Won";
+		winner = "Paper";
+		loser = "Rock";
+	} else if (ps === "rock" && cs === "scissors") {
+		result = "Lose";
+		winner = "Rock";
+		loser = "Scissors";
+	} else {
+		result = "Draw";
+		winner = "No-one";
+		loser = "No-one";
+	}
+	return `You ${result}! ${winner} beats ${loser}`;
 }
