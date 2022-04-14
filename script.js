@@ -18,8 +18,9 @@ function playRound(playerSelection, computerSelection) {
 
 	// Game logic for single round play
 	if (ps === "rock" && cs === "paper") {
-		result = "Won";
-		(winner = "Rock"), (loser = "Paper");
+		result = "Lose";
+        winner = "Paper";
+        loser = "Rock";
 	} else if (ps === "paper" && cs === "scissors") {
 		result = "Lose";
 		winner = "Scissors";
@@ -37,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 		winner = "Paper";
 		loser = "Rock";
 	} else if (ps === "rock" && cs === "scissors") {
-		result = "Lose";
+		result = "Won";
 		winner = "Rock";
 		loser = "Scissors";
 	} else {
@@ -47,3 +48,9 @@ function playRound(playerSelection, computerSelection) {
 	}
 	return `You ${result}! ${winner} beats ${loser}`;
 }
+
+// Play a 5 round game
+
+// Keep score
+// Report a winner or loser
+// Get input from the user
