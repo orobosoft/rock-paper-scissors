@@ -10,5 +10,10 @@ function computerPlay() {
 
 // Take two option and return a string that declares the winner
 function playRound(playerSelection, computerSelection) {
-    
+
+    // Make parameters case-insensitive
+	let ps, cs;
+	ps = playerSelection.toLowerCase();
+	cs = computerSelection.toLowerCase();
+
 }
