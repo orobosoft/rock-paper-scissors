@@ -14,7 +14,10 @@
 				<h1>Rock Paper And Scissors</h1>
 				<div class="instructions">
 					<p>
-						This game is played with three possible choices: Rock, Paper or Scissors. Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both players select the same option, it is considered a tie
+						This game is played with three possible choices: Rock, Paper or
+						Scissors. Rock wins against scissors; paper wins against rock; and
+						scissors wins against paper. If both players select the same option,
+						it is considered a tie
 					</p>
 					<p>
 						<strong>The first player to reach 5 points wins the game.</strong>
@@ -24,6 +27,38 @@
 					<button id="playgame-btn" class="btn btn-primary">Play Game</button>
 				</div>
 			</div>
+		</section>
+
+		<!-- Game Play Section -->
+		<section class="gameplay">
+
+			<div class="scoreboard">
+				<p id="player-score">Player <span>0</span></p>
+				<p id="draw-score">Draw <span>0</span></p>
+				<p id="computer-score">Computer <span>0</span></p>
+			</div>
+
+			<div class="container">
+				<div class="choiceboard">
+					<div class="playerchoice">
+						<p>You</p>
+					</div>
+					<div class="score-info">
+						<p></p>
+					</div>
+					<div class="computerchoice">
+						<p>Comp</p>
+					</div>
+				</div>
+
+				<div class="options">
+					<button class="btn" id="rock">Rock</button>
+					<button class="btn" id="paper">Paper</button>
+					<button class="btn" id="scissors">Scissors</button>
+				</div>
+			</div>
+
+			<button class="x-btn" id="x-btn">X</button>
 		</section>
 
 		<script src="script.js"></script>
