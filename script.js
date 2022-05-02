@@ -152,6 +152,16 @@ function removeResult(e) {
 	}
 }
 
+// Clear the game and stay in the game section
+function restartGame(e) {
+	if (e.target.id === "restart") {
+		removeScore();
+		removeScoreInfo();
+		removeChoice();
+		removeResult(e)
+	}
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
@@ -186,3 +196,6 @@ const xBtn = document.querySelector(".x-btn");
 // Event Listeners
 start.addEventListener("click", startGame);
 options.forEach((opt) => opt.addEventListener("click", playGame));
+window.addEventListener("click", (e) => {
+	restartGame(e);
+});
