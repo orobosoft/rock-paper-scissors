@@ -86,7 +86,7 @@ body{
 .scoreboard{
 	height: 10rem;
 	margin: 0 auto;
-	margin-top: 4rem;
+	margin-top: 3rem;
 	display: flex;
 	justify-content: space-around;
 	padding: 0 2rem;
@@ -138,6 +138,7 @@ body{
 }
 .score-info{
 	min-width: 20rem;
+	height: 2rem;
 	gap :5rem;
 	font-weight: 700;
 }
@@ -178,7 +179,7 @@ body{
 /* Close button */
 .x-btn{
 	position: absolute;
-	top: 2rem;
+	top: 1.5rem;
 	right: 2rem;
 	height: 2.5rem;
 	width: 2.5rem;
@@ -201,6 +202,7 @@ body{
 /* Overlay */
 .overlay, .result-background{
 	height: 100%;
+	z-index: 1;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
 	display: none;
