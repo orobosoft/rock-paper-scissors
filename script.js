@@ -90,6 +90,18 @@ function removeScoreInfo() {
 	scoreInfo.textContent = "";
 }
 
+// Record the first to reach 5 points as the winner
+function countScores() {
+	if (playerScore === 5) {
+		winner = "player";
+	} else if (computerScore === 5) {
+		winner = "computer";
+	} else {
+		winner = "";
+	}
+	return winner;
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
@@ -98,6 +110,7 @@ function playGame(e) {
 	result = playRound(playerChoice, computerChoice);
 	updateScore(result);
 	updateScoreInfo(result);
+	winner = countScores();
 }
 
 // Go to the game section
