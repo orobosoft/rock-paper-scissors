@@ -74,6 +74,22 @@ function removeScore() {
 	computerScoreUi.textContent = 0;
 }
 
+// Add and remove text to show result of each round
+function updateScoreInfo(result) {
+	scoreInfo = document.querySelector(".score-info p");
+	if (result === "tie") {
+		text = "It's a tie";
+	} else {
+		winner = result.charAt().toUpperCase() + result.slice(1);
+		text = scoreInfo.textContent = `${result} wins`;
+	}
+	scoreInfo.textContent = text;
+}
+function removeScoreInfo() {
+	scoreInfo = document.querySelector(".score-info p");
+	scoreInfo.textContent = "";
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
@@ -81,6 +97,7 @@ function playGame(e) {
 	updateChoice(playerChoice, computerChoice);
 	result = playRound(playerChoice, computerChoice);
 	updateScore(result);
+	updateScoreInfo(result);
 }
 
 // Go to the game section
