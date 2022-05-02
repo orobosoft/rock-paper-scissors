@@ -162,6 +162,18 @@ function restartGame(e) {
 	}
 }
 
+// Clear the game and go to the Intro section
+function quitGame(e) {
+	if (e.target.id === "quit") {
+		removeScore();
+		removeScoreInfo();
+		removeChoice();
+		removeResult(e);
+		document.querySelector(".intro").style.display = "flex";
+		document.querySelector(".gameplay").style.display = "none";
+	}
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
@@ -198,4 +210,5 @@ start.addEventListener("click", startGame);
 options.forEach((opt) => opt.addEventListener("click", playGame));
 window.addEventListener("click", (e) => {
 	restartGame(e);
+	quitGame(e);
 });
