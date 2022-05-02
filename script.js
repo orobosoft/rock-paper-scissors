@@ -158,7 +158,9 @@ function restartGame(e) {
 		removeScore();
 		removeScoreInfo();
 		removeChoice();
-		removeResult(e)
+		if (e.target.parentElement.parentElement.className === "result-background") {
+			removeResult(e);
+		}
 	}
 }
 
@@ -168,9 +170,29 @@ function quitGame(e) {
 		removeScore();
 		removeScoreInfo();
 		removeChoice();
-		removeResult(e);
+		if (e.target.parentElement.parentElement.className === "result-background") {
+			removeResult(e);
+		}
 		document.querySelector(".intro").style.display = "flex";
 		document.querySelector(".gameplay").style.display = "none";
+	}
+}
+
+// Add and remove overlay for the x button in game section
+function addXOverlay() {
+	overlay = document.querySelector(".overlay");
+	buttons = document.querySelector(".restart-buttons");
+	clone = buttons.cloneNode(true);
+	clone.style.display = "flex";
+
+	overlay.appendChild(clone);
+	overlay.style.display = "flex";
+}
+function removeXOverlay(e) {
+	if (e.target.className === "overlay" || e.target.className === "quit btn" || e.target.className === "restart btn" || e.key === "Escape") {
+			overlay = document.querySelector(".overlay");
+			overlay.style.display = "none";
+			overlay.removeChild(document.querySelector(".overlay .restart-buttons"));
 	}
 }
 
@@ -211,4 +233,7 @@ options.forEach((opt) => opt.addEventListener("click", playGame));
 window.addEventListener("click", (e) => {
 	restartGame(e);
 	quitGame(e);
+	removeXOverlay(e);
 });
+xBtn.addEventListener("click", addXOverlay);
+window.addEventListener('keydown', removeXOverlay);
