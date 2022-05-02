@@ -102,6 +102,56 @@ function countScores() {
 	return winner;
 }
 
+// Show and remove the overlay of the winner
+function showResult(res) {
+	if (!(res === "")) {
+		// Update the text in the overlay based on the game outcome
+		winner = document.querySelector(".winner");
+		winnerText = document.querySelector(".result-text").lastChild;
+		if (res === "computer") {
+			winner.classList = "winner lose";
+			winner.textContent = "You Lose";
+			winnerText.textContent =
+				"Duhh... you were'nt lucky. Click Play again to try your luck again or click quit to end the game";
+		} else if (res === "player") {
+			winner.classList = "winner win";
+			winner.textContent = "You Win";
+			winnerText.textContent =
+				"Congratulations!!!. Click Play again to try your luck again or click quit to end the game";
+		} else {
+			winner.classList = "winner tie";
+			winner.textContent = "It's a tie";
+			winnerText.textContent =
+				"That was a tough one! Click Play again to try your luck again or click quit to end the game";
+		}
+
+		result = document.querySelector(".result-background");
+		result2 = document.querySelector(".result-section");
+		buttons = document.querySelector(".restart-buttons");
+		clone = buttons.cloneNode(true);
+
+		clone.style.display = "flex";
+
+		result.appendChild(clone);
+
+		document.querySelector(".restart-buttons #quit").textContent = "Quit";
+		document.querySelector(".restart-buttons #restart").textContent =
+			"Play again";
+
+		result2.style.display = "flex";
+		result.style.display = "block";
+	}
+}
+function removeResult(e) {
+	if (e.target.id === "quit" || e.target.id === "restart") {
+		overlay = document.querySelector(".result-background");
+		overlay.style.display = "none";
+		overlay.removeChild(
+			document.querySelector(".result-background .restart-buttons")
+		);
+	}
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
@@ -111,6 +161,7 @@ function playGame(e) {
 	updateScore(result);
 	updateScoreInfo(result);
 	winner = countScores();
+	showResult(winner);
 }
 
 // Go to the game section
