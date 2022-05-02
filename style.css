@@ -276,3 +276,12 @@ body{
 	width: 5rem;
 	height: 5rem;
 }
+
+@keyframes fade-in {
+	from{
+		opacity: 0;
+	}
+	t0{
+		opacity: 1;
+	}
+}
