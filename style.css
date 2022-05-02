@@ -193,3 +193,26 @@ body{
 	background-color: var(--accent-color);
 	color: var(--light-color);
 }
+
+/* Overlay */
+.overlay, .result-background{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	animation: fade 1s;
+	-webkit-animation: fade-in .5s ease-in-out;
+}
+/* Restart buttons */
+.restart-buttons{
+	margin-top: 5rem;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	gap: 4rem;
+}
