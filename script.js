@@ -42,6 +42,29 @@ function playRound(playerSelection, computerSelection) {
 	return result;
 }
 
+// Show and remove the choice of both player and computer
+function updateChoice(a, b) {
+	player = document.querySelector(".playerchoice p");
+	computer = document.querySelector(".computerchoice p");
+
+	player.textContent = a.charAt().toUpperCase() + a.slice(1);
+	computer.textContent = b;
+}
+function removeChoice() {
+	player = document.querySelector(".playerchoice p");
+	computer = document.querySelector(".computerchoice p");
+
+	player.textContent = "You";
+	computer.textContent = "Comp";
+}
+
+// Main game sequence
+function playGame(e) {
+	playerChoice = e.target.id;
+	computerChoice = computerPlay();
+	updateChoice(playerChoice, computerChoice);
+}
+
 // Go to the game section
 function startGame() {
 	document.querySelector(".intro").style.display = "none";
@@ -63,3 +86,4 @@ const xBtn = document.querySelector(".x-btn");
 
 // Event Listeners
 start.addEventListener("click", startGame);
+options.forEach((opt) => opt.addEventListener("click", playGame));
