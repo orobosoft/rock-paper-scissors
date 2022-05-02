@@ -74,3 +74,122 @@ body{
 	background-color: var(--secondary-color);
 	color: var(--light-color);
 }
+
+/* Game Play Section*/
+.gameplay{
+	height: 100%;
+	display: none;
+	animation: fade-in .5s ease;
+	-webkit-animation: fade-in .5s ease;
+	margin-bottom: 5rem;
+}
+.scoreboard{
+	height: 10rem;
+	margin-top: 4rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.scoreboard p{
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	min-width: 12rem;
+}
+.scoreboard p span{
+	font-weight: 700;
+	font-size: 2rem;
+}
+/* choice board */
+.choiceboard{
+	display: flex;
+	max-width: 700px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 5rem auto;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+.playerchoice,
+.computerchoice{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 auto;
+	height: 18.5rem;
+	width: 18.5rem;
+	background-color: var(--light-color);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+.playerchoice p,
+.computerchoice p{
+	color: #1d3557;
+	font-size: 4rem;
+}
+.score-info{
+	min-width: 15rem;
+	gap :5rem;
+	font-weight: 700;
+}
+/* Options */
+.options{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	max-width: 700px;
+	margin: 0 auto;
+}
+.options button{
+	margin: 5rem 0;
+	font-size: 2rem;
+	background-color: var(--dark-color);
+	color: #fff;
+	border: solid var(--light-color) .2rem;
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+}
+.options button:hover,
+.options button:active{
+	background-color: var(--secondary-color);
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+.options button:active{
+	background-color: var(--primary-color);
+}
+/* Close button */
+.x-btn{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	height: 2.5rem;
+	width: 2.5rem;
+	display: flex;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+.x-btn,
+.quit{
+	background-color: var(--accent-color);
+	color: var(--light-color);
+}
