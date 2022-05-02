@@ -58,11 +58,29 @@ function removeChoice() {
 	computer.textContent = "Comp";
 }
 
+// Update and clear the score of the game
+function updateScore(result) {
+	result === "tie" ? draw++ : result === "player" ? playerScore++ : computerScore++;
+	playerScoreUi.textContent = playerScore;
+	drawUi.textContent = draw;
+	computerScoreUi.textContent = computerScore;
+}
+function removeScore() {
+	playerScore = 0;
+	draw = 0;
+	computerScore = 0;
+	playerScoreUi.textContent = 0;
+	drawUi.textContent = 0;
+	computerScoreUi.textContent = 0;
+}
+
 // Main game sequence
 function playGame(e) {
 	playerChoice = e.target.id;
 	computerChoice = computerPlay();
 	updateChoice(playerChoice, computerChoice);
+	result = playRound(playerChoice, computerChoice);
+	updateScore(result);
 }
 
 // Go to the game section
